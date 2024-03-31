@@ -155,6 +155,7 @@ interface Error<T> {
 
 export interface FormBuilderProps<TForm> {
   fields: Array<FieldProp>;
+  //@ts-ignore
   defaultValue: UseFormProps<TForm>["defaultValues"];
   children?: React.ReactNode;
   index?: string | number;

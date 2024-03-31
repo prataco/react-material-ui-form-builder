@@ -110,6 +110,7 @@ export default function StandardRadioGroup<TOption>(props: {
               ))}
             </FormControl>
             {!!get(errors, fieldConfig.attribute) && (
+              //@ts-ignore
               <ErrorText error={get(errors, fieldConfig.attribute)?.message} />
             )}
           </FormGroup>

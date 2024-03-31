@@ -44,12 +44,13 @@ export default function StandardEditor(props: {
         <div onFocus={() => setTouched(true)}>
           <CKEditor
             editor={ ClassicEditor }
-            data={field.value}
+            data={field.value || '' }
             onChange={(e, editor) => setValue(fieldConfig.attribute, editor.data)}
             containerProps={fieldConfig.groupContainerProps}
             editableProps={fieldConfig.props}
           />
           {!!get(errors, fieldConfig.attribute) && (
+            //@ts-ignore
             <ErrorText error={get(errors, fieldConfig.attribute)?.message} />
           )}
         </div>
