@@ -2,7 +2,8 @@ import get from "lodash/get";
 import React, { useEffect, useState } from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 
-import { Editor } from "@jeremyling/react-material-ui-rich-text-editor";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { CommonFieldProps, RichTextFieldProps } from "./props/FieldProps";
 import ErrorText from "./widgets/ErrorText";
@@ -41,9 +42,10 @@ export default function StandardEditor(props: {
       control={control}
       render={({ field }) => (
         <div onFocus={() => setTouched(true)}>
-          <Editor
-            html={field.value}
-            updateHtml={(html: string) => setValue(fieldConfig.attribute, html)}
+          <CKEditor
+            editor={ ClassicEditor }
+            data={field.value}
+            onChange={(e, editor) => setValue(fieldConfig.attribute, editor.data)}
             containerProps={fieldConfig.groupContainerProps}
             editableProps={fieldConfig.props}
           />
