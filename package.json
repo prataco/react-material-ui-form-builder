@@ -69,8 +69,13 @@
     "rollup-plugin-size-snapshot": "^0.12.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
+<<<<<<< HEAD
     "slate": "^0.77.2",
     "slate-react": "^0.77.3",
+=======
+    "slate": "^0.78.0",
+    "slate-react": "^0.77.2",
+>>>>>>> origin/snyk-upgrade-588e846fa3a1852b251b4ce92c9cef78
     "typescript": "^4.6.3",
     "yup": "^0.32.11"
   },
